@@ -1,0 +1,10 @@
+{
+  "name": "eslint",
+  "version": "1.0.0",
+  "description": "Package for eslint",
+  "author": "Martijn Oppedijk",
+  "license": "none",
+  "devDependencies": {
+    "eslint": "^4.12.1"
+  }
+}

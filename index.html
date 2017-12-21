@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Slider</title>
+        <style>
+            .slider {
+                width: 728px;
+                height: 90px;
+                position: relative;
+                overflow: hidden;
+            }
+            .slider__btn {
+                position: absolute;
+                top:10px;
+                z-index: 2;
+            }
+            .slider__btn a {
+                text-decoration: none;
+                color: #000000;
+                background-color: #ffffff;
+                height: 70px;
+                line-height: 70px;
+                padding: 0px 10px;
+                display: inline-block;
+            }
+            .slider__btn--prev{
+                left: 10px;
+            }
+            .slider__btn--next{
+                right: 10px;
+            }
+            .slider__slide {
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+            .slider__title {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                color: #ffffff;
+                height: 90px;
+                line-height: 90px;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <header id='header'></header>
+
+        <!-- Javascript -->
+        <script src="./js/slider/slider.js"></script>
+        <script src="./js/slider/prototype/SliderController.js"></script>
+        <script src="./js/slider/prototype/Btn.js"></script>
+        <script src="./js/slider/prototype/Slide.js"></script>
+        <script>
+            (function(){
+
+                var Header = new Slider({
+                    images:[
+                        {   
+                            title: 'Afbeelding 1',
+                            url: 'http://lorempixel.com/728/90/sports/1/',
+                            link: 'http://google.nl'
+                        },
+                        {   
+                            title: 'Afbeelding 2',
+                            url: 'http://lorempixel.com/728/90/sports/2/',
+                            link: 'http://google.nl'
+                        },
+                        {   
+                            title: 'Afbeelding 3',
+                            url: 'http://lorempixel.com/728/90/sports/3/',
+                            link: 'http://google.nl'
+                        },
+                        {   
+                            title: 'Afbeelding 4',
+                            url: 'http://lorempixel.com/728/90/sports/5/',
+                            link: 'http://google.nl'
+                        }
+                    ],
+                    target: 'header'
+                });
+
+                Header.render(0);
+            }());
+        </script>
+    </body>
+</html>
