@@ -1,10 +1,17 @@
 {
-  "name": "eslint",
+  "name": "slider",
+  "main": "Slider.js",
   "version": "1.0.0",
-  "description": "Package for eslint",
+  "description": "Slider constructor function",
   "author": "Martijn Oppedijk",
   "license": "none",
   "devDependencies": {
-    "eslint": "^4.12.1"
+    "eslint": "^4.12.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

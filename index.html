@@ -55,14 +55,11 @@
         <header id='header'></header>
 
         <!-- Javascript -->
-        <script src="./js/slider/Slider.js"></script>
-        <script src="./js/slider/prototype/_render.js"></script>
-        <script src="./js/slider/prototype/SliderController.js"></script>
-        <script src="./js/slider/prototype/Btn.js"></script>
-        <script src="./js/slider/prototype/Slide.js"></script>
+        <script src="./dist/slider.min.js"></script>
         <script>
             (function(){
 
+                // Construct Slider with props
                 var Header = new Slider({
                     images:[
                         {   
@@ -89,11 +86,13 @@
                     target: 'header'
                 });
 
+                // Always start slider
                 Header.startAt(0);
 
+                // Set interval function for autoplay
                 setInterval(function(){
-                    // Header.nextSlide();
-                    Header.prevSlide();
+                    Header.nextSlide();
+                    // Header.prevSlide();
                     // console.log(Header.getCurrentSlide());
                 }, 1000);
 
