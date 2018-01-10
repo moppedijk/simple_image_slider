@@ -1,6 +1,9 @@
 
-console.log(Slider);
-
+/**
+ * Slider constructor function
+ * @constructor
+ * @param {object} props - Slider properties images[Array] and target[string]
+ */
 function Slider(props) {
 
 	// Var declarations
