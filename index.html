@@ -55,7 +55,8 @@
         <header id='header'></header>
 
         <!-- Javascript -->
-        <script src="./js/slider/slider.js"></script>
+        <script src="./js/slider/Slider.js"></script>
+        <script src="./js/slider/prototype/_render.js"></script>
         <script src="./js/slider/prototype/SliderController.js"></script>
         <script src="./js/slider/prototype/Btn.js"></script>
         <script src="./js/slider/prototype/Slide.js"></script>
@@ -88,7 +89,14 @@
                     target: 'header'
                 });
 
-                Header.render(0);
+                Header.startAt(0);
+
+                setInterval(function(){
+                    // Header.nextSlide();
+                    Header.prevSlide();
+                    // console.log(Header.getCurrentSlide());
+                }, 1000);
+
             }());
         </script>
     </body>
