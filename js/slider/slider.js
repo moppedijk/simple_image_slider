@@ -1,96 +1,102 @@
 
-/**
- * Slider constructor function
- * @constructor
- * @param {object} props - Slider properties images[Array] and target[string]
- */
-function Slider(props) {
+// Check if Slider constructor is not a function
+if(typeof window.Slider !== 'function') {
 
-	// Var declarations
-	var slides = [],
-		Controller,
-		BtnPrev,
-		BtnNext;
+	/**
+	 * Slider constructor function
+	 * @constructor
+	 * @param {object} props - Slider properties images[Array] and target[string]
+	 */
+	window.Slider = function Slider (props) {
 
-	// Check if props is true
-	if(!props) {
-		throw new Error('Slider init has no props');
-	}
+		// Var declarations
+		var slides = [],
+			Controller,
+			BtnPrev,
+			BtnNext;
 
-	// Check if props has images and target
-	if(props.images && props.target) {
-
-		// Construct slides	
-		for(var i = 0; i < props.images.length; i++) {
-			slides.push(new Slider.prototype.Slide(props.images[i]));
+		// Check if props is true
+		if(!props) {
+			throw new Error('Slider init has no props');
 		}
 
-		// Construct Btn prev
-		BtnPrev = new Slider.prototype.Btn({
-			label: 'left',
-			type: 'prev'
-		});
-		
-		// Contruct Btn next
-		BtnNext = new Slider.prototype.Btn({
-			label: 'right',
-			type: 'next'
-		});
-		
-		// Render HTML elements in target
-		Slider.prototype._render({
-			images: slides,
-			btnPrev: BtnPrev,
-			btnNext: BtnNext,
-			target: props.target
-		});
+		// Check if props has images and target
+		if(props.images && props.target) {
 
-		// Construct Controller
-		Controller = new Slider.prototype.SliderController({
-			images: slides,
-			btnPrev: BtnPrev,
-			btnNext: BtnNext
-		});
+			// Construct slides	
+			for(var i = 0; i < props.images.length; i++) {
+				slides.push(new Slider.prototype.Slide(props.images[i]));
+			}
 
-	}else {
-		throw new Error('Images or target are not defined in init');
-	}
+			// Construct Btn prev
+			BtnPrev = new Slider.prototype.Btn({
+				label: 'left',
+				type: 'prev'
+			});
+			
+			// Contruct Btn next
+			BtnNext = new Slider.prototype.Btn({
+				label: 'right',
+				type: 'next'
+			});
+			
+			// Render HTML elements in target
+			Slider.prototype._render({
+				images: slides,
+				btnPrev: BtnPrev,
+				btnNext: BtnNext,
+				target: props.target
+			});
 
-	/**
-	 * Start At function
-	 * @public 
-	 * @param {number} index - Index of the array
-	 */
-	this.startAt = function(index) {
-		if(Controller) {
-			Controller.startAt(index);
-		} else {
-			throw new Error('Controller not yet definded');
+			// Construct Controller
+			Controller = new Slider.prototype.SliderController({
+				images: slides,
+				btnPrev: BtnPrev,
+				btnNext: BtnNext
+			});
+
+		}else {
+			throw new Error('Images or target are not defined in init');
 		}
-	};
 
-	/**
-	 * Next Slide function
-	 * @public
-	 */
-	this.nextSlide = function() {
-		Controller.next();
-	};
-	
-	/**
-	 * Prev Slide function
-	 * @public
-	 */
-	this.prevSlide = function() {
-		Controller.prev();
-	};
+		/**
+		 * Start At function
+		 * @public 
+		 * @param {number} index - Index of the array
+		 */
+		this.startAt = function(index) {
+			if(Controller) {
+				Controller.startAt(index);
+			} else {
+				throw new Error('Controller not yet definded');
+			}
+		};
 
-	/**
-	 * Get Current Slide function
-	 * @public
-	 * @return {number} - returns the index of the array
-	 */
-	this.getCurrentSlide = function() {
-		return Controller.getCurrentSlide();
+		/**
+		 * Next Slide function
+		 * @public
+		 */
+		this.nextSlide = function() {
+			Controller.next();
+		};
+
+		/**
+		 * Prev Slide function
+		 * @public
+		 */
+		this.prevSlide = function() {
+			Controller.prev();
+		};
+
+		/**
+		 * Get Current Slide function
+		 * @public
+		 * @return {number} - returns the index of the array
+		 */
+		this.getCurrentSlide = function() {
+			return Controller.getCurrentSlide();
+		};
 	};
+} else {
+	throw new Error('Slider constructor allready exists in window object');
 }
