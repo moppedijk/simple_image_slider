@@ -80,7 +80,8 @@ Slider.prototype.SliderController = (function() {
 	 */
 	return function SlideController (props) {
 		var btnNext,
-			btnPrev;
+			btnPrev,
+			slideStarted = false;
 
 		// Slides
 		slides = props.images || false;
@@ -97,8 +98,38 @@ Slider.prototype.SliderController = (function() {
 		 * @param {number} index 
 		 */
 		this.startAt = function(index) {
-			slideIndex = index || 0;
-			showSlide(slideIndex);
+			if(!slideStarted) {
+				slideIndex = index || 0;
+				showSlide(slideIndex);
+				slideStarted = true;
+			} else {
+				throw new Error('Slider allready started');
+			}
+		};
+
+		/**
+		 * Next function
+		 * @public
+		 */
+		this.next = function() {
+			next();
+		};
+
+		/**
+		 * Prev function
+		 * @public
+		 */
+		this.prev = function() {
+			prev();
+		};
+
+		/**
+		 * Get Current Slide function
+		 * @public
+		 * @param {number} - Returns array index of current slide
+		 */
+		this.getCurrentSlide = function() {
+			return slideIndex;
 		};
 	};
 
