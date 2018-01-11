@@ -44,3 +44,4 @@ setInterval(function(){
 ```
 
 ## license
+GNU General Public Licence 2.0
