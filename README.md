@@ -9,7 +9,7 @@ Grunt is used to build and minify the source folder. To use Grunt install the np
 ## Expample
 Below you will find an example code snippet for constructing the slider. Create an variable and construct Slider with `new Slider()`. The Slider constructor takes one argument `props`, props takes two properties `images` and `target`. _Images_ is an Array with and object which is the image object. The image object takes three properties `title`, `url`, and `link`. _Target_ is an string and only accepts id's, in this case the target is `#header` or `<div id='header'></div>`. If the Slider is contstructed it can be started with the `Header.startAt(0)` method.
 
-```
+```javascript
 <script src="./dist/slider.min.js"></script>
 <script>
 	(function(){
@@ -37,7 +37,7 @@ Below you will find an example code snippet for constructing the slider. Create 
 
 In this example `Header` has a few public properties for usage. `header.nextSlide()` can be used to go to the next slide. `Header.prevSlide()` can be used to go to the previous slide. `Header.getCurrentSlide()` can be used to get the current slide 'array' index. Below you will find an example code snippet which creates an autoplay image slider.
 
-```
+```javascript
 setInterval(function(){ 
 	Header.nextSlide(); 
 }, 1000);
