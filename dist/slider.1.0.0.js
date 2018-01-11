@@ -1,8 +1,8 @@
 /** 
  * Package name: slider 
- * Publish date: 2018-01-10 
+ * Publish date: 2018-01-11 
  * Author: Martijn Oppedijk 
- * Description: Slider constructor function 
+ * Description: Simple Slider 
  * Version: 1.0.0 
  */ 
 
