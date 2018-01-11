@@ -2,15 +2,15 @@
 This Simple Slider creates an image slider in a given target. The image slider creates its own html, image elements and btn elements.
 
 ## Getting started
-To get started download or clone the repository and use the JavaScript files in the `dist` folder. Add the script files to your `<head>` or add them to your bundle. The `Slider` constructor is added the `window` object.
+To get started download or clone the repository and use the JavaScript files in the `dist` folder. Add the script files to your `<head>` or add them to your bundle. The `Slider` constructor is added to the `window` object.
 
 Grunt is used to build and minify the source folder. To use Grunt install the npm dependencies with `npm install` and run `grunt` in your console.
 
 ## Expample
-Below you will find an example code snippet for constructing the slider. Create an variable and construct Slider with `new Slider()`. The Slider constructor takes one argument `props`, props takes two properties `images` and `target`. _Images_ is an Array with and object which is the image object. The image object takes three properties `title`, `url`, and `link`. _Target_ is an string and only accepts id's, in this case the target is `#header` or `<div id='header'></div>`. If the Slider is contstructed it can be started with the `Header.startAt(0)` method.
+Below you will find an example code snippet for constructing the slider. Create an variable and construct Slider with `new Slider()`. The Slider constructor takes one argument `props`, props takes two properties `images` and `target`. *Images* is an Array with and object which is the image object. The image object takes three properties `title`, `url`, and `link`. *Target* is an string and only accepts id's, in this case the target is `#header` or `<div id='header'></div>`. If the Slider is contstructed it can be started with the `Header.startAt(0)` method.
 
 ```javascript
-<script src="./dist/slider.min.js"></script>
+<script src="./dist/slider.1.0.0.min.js"></script>
 <script>
 	(function(){
 		// Construct Slider with props 
