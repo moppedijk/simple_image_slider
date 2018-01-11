@@ -35,7 +35,7 @@ Below you will find an example code snippet for constructing the slider. Create 
 </script>
 ```
 
-In this example `Header` has a few public properties for usage. `header.nextSlide()` can be used to go to the next slide. `Header.prevSlide()` can be used to go to the previous slide. `Header.getCurrentSlide()` can be used to get the current slide 'array' index. Below you will find an example code snippet which creates an autoplay image slider.
+In the example above `Header` has a few public properties for usage. `header.nextSlide()` can be used to go to the next slide. `Header.prevSlide()` can be used to go to the previous slide. `Header.getCurrentSlide()` can be used to get the current slide 'array' index. Below you will find an example code snippet which creates an autoplay image slider.
 
 ```javascript
 setInterval(function(){ 
@@ -43,5 +43,5 @@ setInterval(function(){
 }, 1000);
 ```
 
-## license
+## License
 GNU General Public Licence 2.0
