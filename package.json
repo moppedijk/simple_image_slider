@@ -11,7 +11,7 @@
   "version": "1.0.0",
   "description": "Simple Slider",
   "author": "Martijn Oppedijk",
-  "license": "GNU General Public Licence 2.0",
+  "license": "GPL-2.0-or-later",
   "devDependencies": {
     "eslint": "^4.12.1",
     "grunt": "^1.0.1",
