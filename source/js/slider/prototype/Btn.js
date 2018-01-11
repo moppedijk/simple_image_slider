@@ -4,14 +4,14 @@ Slider.prototype.Btn = (function() {
 	
 	// Var declarions
 	var id = 0,
-		generateHtml;
+		_generateHtml;
 
 	/**
 	 * Generate html function
 	 * @private
 	 * @param {object} props - Html properties
 	 */
-	generateHtml = function(props) {
+	_generateHtml = function(props) {
 		var html = '';
 
 		// Opening tag (switch class)
@@ -61,7 +61,7 @@ Slider.prototype.Btn = (function() {
 		 * @public
 		 */
 		this.getHtml = function() {
-			return generateHtml({
+			return _generateHtml({
 				htmlId: htmlId,
 				type: type,
 				label: label

@@ -4,16 +4,16 @@ Slider.prototype.Slide = (function() {
 	
 	// Var declarations
 	var id = 0,
-		generateHtml,
-		show,
-		hide;
+		_generateHtml,
+		_show,
+		_hide;
 
 	/** 
 	 * Generate Html function
 	 * @private
 	 * @param {object} props - The html props
 	 */
-	generateHtml = function(props) {
+	_generateHtml = function(props) {
 		var html = '';
 
 		html += '<div id=\'' + props.htmlId + '\' class=\'slider__slide\'>';
@@ -29,7 +29,7 @@ Slider.prototype.Slide = (function() {
 	 * @private
 	 * @param {object} htmlId - The id of the slide
 	 */
-	show = function(htmlId) {
+	_show = function(htmlId) {
 		var target = document.getElementById(htmlId);
 		target.style.display = 'block';
 	};
@@ -39,7 +39,7 @@ Slider.prototype.Slide = (function() {
 	 * @private
 	 * @param {object} htmlId - The id of the slide
 	 */
-	hide = function(htmlId) {
+	_hide = function(htmlId) {
 		var target = document.getElementById(htmlId);
 		target.style.display = 'none';
 	};
@@ -71,7 +71,7 @@ Slider.prototype.Slide = (function() {
 		 * @public
 		 */
 		this.getHtml = function() {
-			return generateHtml({
+			return _generateHtml({
 				htmlId: htmlId,
 				url: url,
 				title: title,
@@ -84,7 +84,7 @@ Slider.prototype.Slide = (function() {
 		 * @public
 		 */
 		this.show = function() {
-			show(htmlId);
+			_show(htmlId);
 		};
 
 		/**
@@ -92,7 +92,7 @@ Slider.prototype.Slide = (function() {
 		 * @public
 		 */
 		this.hide = function() {
-			hide(htmlId);
+			_hide(htmlId);
 		};
 
 		/**
