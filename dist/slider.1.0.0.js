@@ -144,14 +144,14 @@ Slider.prototype.Btn = (function() {
 	
 	// Var declarions
 	var id = 0,
-		generateHtml;
+		_generateHtml;
 
 	/**
 	 * Generate html function
 	 * @private
 	 * @param {object} props - Html properties
 	 */
-	generateHtml = function(props) {
+	_generateHtml = function(props) {
 		var html = '';
 
 		// Opening tag (switch class)
@@ -201,7 +201,7 @@ Slider.prototype.Btn = (function() {
 		 * @public
 		 */
 		this.getHtml = function() {
-			return generateHtml({
+			return _generateHtml({
 				htmlId: htmlId,
 				type: type,
 				label: label
@@ -239,16 +239,16 @@ Slider.prototype.Slide = (function() {
 	
 	// Var declarations
 	var id = 0,
-		generateHtml,
-		show,
-		hide;
+		_generateHtml,
+		_show,
+		_hide;
 
 	/** 
 	 * Generate Html function
 	 * @private
 	 * @param {object} props - The html props
 	 */
-	generateHtml = function(props) {
+	_generateHtml = function(props) {
 		var html = '';
 
 		html += '<div id=\'' + props.htmlId + '\' class=\'slider__slide\'>';
@@ -264,7 +264,7 @@ Slider.prototype.Slide = (function() {
 	 * @private
 	 * @param {object} htmlId - The id of the slide
 	 */
-	show = function(htmlId) {
+	_show = function(htmlId) {
 		var target = document.getElementById(htmlId);
 		target.style.display = 'block';
 	};
@@ -274,7 +274,7 @@ Slider.prototype.Slide = (function() {
 	 * @private
 	 * @param {object} htmlId - The id of the slide
 	 */
-	hide = function(htmlId) {
+	_hide = function(htmlId) {
 		var target = document.getElementById(htmlId);
 		target.style.display = 'none';
 	};
@@ -306,7 +306,7 @@ Slider.prototype.Slide = (function() {
 		 * @public
 		 */
 		this.getHtml = function() {
-			return generateHtml({
+			return _generateHtml({
 				htmlId: htmlId,
 				url: url,
 				title: title,
@@ -319,7 +319,7 @@ Slider.prototype.Slide = (function() {
 		 * @public
 		 */
 		this.show = function() {
-			show(htmlId);
+			_show(htmlId);
 		};
 
 		/**
@@ -327,7 +327,7 @@ Slider.prototype.Slide = (function() {
 		 * @public
 		 */
 		this.hide = function() {
-			hide(htmlId);
+			_hide(htmlId);
 		};
 
 		/**
@@ -362,33 +362,33 @@ Slider.prototype.SliderController = (function() {
 	// Var declarations
 	var slideIndex,
 		slides,
-		onBtnPrevClick,
-		onBtnNextClick,
-		showSlide,
-		next,
-		prev;
+		_onBtnPrevClick,
+		_onBtnNextClick,
+		_showSlide,
+		_next,
+		_prev;
 
 	/**
 	 * On Btn Prev Click handler
 	 * @private
 	 */
-	onBtnPrevClick = function() {
-		prev();
+	_onBtnPrevClick = function() {
+		_prev();
 	};
 
 	/**
 	 * On Btn Click handler
 	 * @private
 	 */
-	onBtnNextClick = function() {
-		next();
+	_onBtnNextClick = function() {
+		_next();
 	};
 
 	/**
 	 * Show slide function
 	 * @private
 	 */
-	showSlide = function(index) {
+	_showSlide = function(index) {
 		if(index > slides.length) {
 			throw new Error('Show Slide index is to large! It needs to be smaller or equal to: ' + slides.length);
 		}else {
@@ -406,13 +406,13 @@ Slider.prototype.SliderController = (function() {
 	 * Next slide function
 	 * @private
 	 */
-	next = function() {
+	_next = function() {
 		if(slideIndex >= (slides.length - 1)) {
-			showSlide(0);
+			_showSlide(0);
 			slideIndex = 0;
 		}else {
 			slideIndex++;
-			showSlide(slideIndex);
+			_showSlide(slideIndex);
 		}
 	};
 
@@ -420,13 +420,13 @@ Slider.prototype.SliderController = (function() {
 	 * Prev slide function
 	 * @private
 	 */
-	prev = function() {
+	_prev = function() {
 		if(slideIndex <= 0) {
-			showSlide((slides.length -1));
+			_showSlide((slides.length -1));
 			slideIndex = (slides.length - 1);
 		}else {
 			slideIndex--;
-			showSlide(slideIndex);
+			_showSlide(slideIndex);
 		}
 	};
 
@@ -446,8 +446,8 @@ Slider.prototype.SliderController = (function() {
 		// Buttons
 		btnPrev = document.getElementById(props.btnPrev.getHtmlId());
 		btnNext = document.getElementById(props.btnNext.getHtmlId());
-		btnPrev.addEventListener('click', onBtnPrevClick);
-		btnNext.addEventListener('click', onBtnNextClick);
+		btnPrev.addEventListener('click', _onBtnPrevClick);
+		btnNext.addEventListener('click', _onBtnNextClick);
 
 		/**
 		 * Start at function
@@ -457,7 +457,7 @@ Slider.prototype.SliderController = (function() {
 		this.startAt = function(index) {
 			if(!slideStarted) {
 				slideIndex = index || 0;
-				showSlide(slideIndex);
+				_showSlide(slideIndex);
 				slideStarted = true;
 			} else {
 				throw new Error('Slider allready started');
@@ -469,7 +469,7 @@ Slider.prototype.SliderController = (function() {
 		 * @public
 		 */
 		this.next = function() {
-			next();
+			_next();
 		};
 
 		/**
@@ -477,7 +477,7 @@ Slider.prototype.SliderController = (function() {
 		 * @public
 		 */
 		this.prev = function() {
-			prev();
+			_prev();
 		};
 
 		/**
