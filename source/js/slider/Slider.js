@@ -11,11 +11,12 @@ if(typeof window.Slider !== 'function') {
 
 		// Var declarations
 		var slides = [],
+			startAt = props.startAt || 0,
 			Controller,
 			BtnPrev,
 			BtnNext;
 
-		// Check if props is true
+		// Check if props is false
 		if(!props) {
 			throw new Error('Slider init has no props');
 		}
@@ -55,22 +56,12 @@ if(typeof window.Slider !== 'function') {
 				btnNext: BtnNext
 			});
 
+			// Start controller at array position
+			Controller.startAt(startAt);
+
 		}else {
 			throw new Error('Images or target are not defined in init');
 		}
-
-		/**
-		 * Start At function
-		 * @public 
-		 * @param {number} index - Index of the array
-		 */
-		this.startAt = function(index) {
-			if(Controller) {
-				Controller.startAt(index);
-			} else {
-				throw new Error('Controller not yet definded');
-			}
-		};
 
 		/**
 		 * Next Slide function
