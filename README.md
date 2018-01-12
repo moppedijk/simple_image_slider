@@ -7,8 +7,18 @@ To get started download or clone the repository and use the JavaScript files in 
 Grunt is used to build and minify the source folder. To use Grunt install the npm dependencies with `npm install` and run `grunt` in your console.
 
 ## Expample
-Below you will find an example code snippet for constructing the slider. Create an variable and construct Slider with `new Slider()`. The Slider constructor takes one argument `props`, props takes two properties `images` and `target`. *Images* is an Array with and object which is the image object. The image object takes three properties `title`, `url`, and `link`. *Target* is an string and only accepts id's, in this case the target is `#header` or `<div id='header'></div>`. If the Slider is contstructed it can be started with the `Header.startAt(0)` method.
+Below you will find an example code snippet for constructing the slider. Create a variable and construct Slider with `new Slider()`. The Slider constructor takes one argument `props`, props takes a few properties `images`, `target`, and `startAt`. 
 
+### Props images
+Images is a Array with and object which is the image object. The image object takes three properties `title`, `url`, and `link`. 
+
+### Props target
+Target is a string and only accepts id's, in this case the target is `#header` or `<div id='header'></div>`.
+
+### Props startAt
+StartAt is a number and represents the array index of the images array.
+
+### Example code
 ```javascript
 (function(){
 	// Construct Slider with props 
@@ -23,12 +33,11 @@ Below you will find an example code snippet for constructing the slider. Create 
 				title: 'Afbeelding 2',
 				url: 'http://lorempixel.com/728/90/sports/2/',
 				link: 'http://google.nl'
-			},
+			}
 		],
-		target: 'header'
+		target: 'header',
+		startAt: 0
 	});
-	// Always start slider
-	Header.startAt(0);
 }());
 ```
 
