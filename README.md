@@ -6,7 +6,7 @@ To get started download or clone the repository and use the JavaScript files in 
 
 Grunt is used to build and minify the source folder. To use Grunt install the npm dependencies with `npm install` and run `grunt` in your console.
 
-## Expample
+## Example
 Below you will find an example code snippet for constructing the slider. Create a variable and construct Slider with `new Slider()`. The Slider constructor takes one argument `props`, props takes a few properties `images`, `target`, and `startAt`. 
 
 ### Props images
