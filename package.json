@@ -1,12 +1,12 @@
 {
-  "name": "slider",
+  "name": "simple-image-slider",
   "main": "Slider.js",
   "scripts": {
     "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/moppedijk/slider_contructor_prototype.git"
+    "url": "https://github.com/moppedijk/simple_image_slider.git"
   },
   "version": "1.0.0",
   "description": "Simple Slider",

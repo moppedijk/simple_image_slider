@@ -1,5 +1,5 @@
-# Simple Slider
-This Simple Slider creates an image slider in a given target. The image slider creates its own html, image elements and btn elements.
+# Simple Image Slider
+This Simple Image Slider creates an image slider in a given target. The image slider creates its own html, image elements and btn elements.
 
 ## Getting started
 To get started download or clone the repository and use the JavaScript files in the `dist` folder. Add the script files to your `<head>` or add them to your bundle. The `Slider` constructor is added to the `window` object.
